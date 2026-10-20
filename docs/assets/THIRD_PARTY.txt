@@ -1,0 +1,19 @@
+ARCHIVE
+Original images, typography extracts and source descriptions: Group5 - 字民 and original collectors. These materials are not covered by the application MIT license.
+https://www.are.na/chen-wenqi/group5-1vk3ydy1fq4
+Snapshot 2026-10-20. 228 blocks. Empty descriptions remain empty.
+
+DISPLAY FONT
+Noto Serif CJK TC Black, subsetted for this site's display text.
+SIL Open Font License 1.1. See fonts/OFL.txt.
+https://github.com/notofonts/noto-cjk
+
+HAND TRACKING RUNTIME
+MediaPipe Tasks Vision 1.1.1. Google LLC. Apache-2.0.
+https://github.com/google-ai-edge/mediapipe
+
+PRETRAINED HAND MODEL
+Google MediaPipe Hand Landmarker, float16, model version 1.
+Model source and applicable terms: https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker
+https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task
+The model is not covered by the application MIT license.

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a1b19">
+<meta name="description" content="讓文字再次流動。228筆澳門街頭文字檔案，透過粒子、手勢與檢索，重新相遇。">
+<title>字民 · 浮游檔案</title><link rel="preload" href="assets/fonts/zimaan-display.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="typography.css">
+</head>
+<body>
+<canvas id="world" aria-label="可互動的字民粒子檔案；也可用索引清單瀏覽全部記錄"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<header><a class="brand" href="#" aria-label="字民浮游檔案首頁"><span class="brand-mark"><img src="assets/zimaan-wordmark.svg" alt="字民"></span><span class="brand-en">MACAO TYPE<br>RESIDENTS</span></a><nav aria-label="作品模式"><button class="nav active" data-mode="roam">01 <span>浮游</span></button><button class="nav" data-mode="index">02 <span>INDEX</span></button><button class="nav" data-mode="design">03 <span>ReDesign</span></button></nav><button id="about-open" class="text-btn">關於檔案 <span>↗</span></button></header>
+<main>
+<section class="intro"><div class="eyebrow"><i></i> 澳門檔案 / 字民 / 2026</div><h1 id="headline"><span class="title-kicker">TYPE / RESIDENTS</span><span class="title-top"><span>字</span><span>在</span></span><span class="title-main"><span>浮</span><span>游</span></span><span class="title-axis">澳門・字民</span></h1><p id="intro-copy">散落街頭的文字，<br>也是這座城市的居民。</p><div class="search-wrap"><label for="search" class="sr-only">搜尋名稱、街道、上傳者或檔案編號</label><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="尋字、尋街、尋人…" autocomplete="off"><kbd>/</kbd></div><div class="filters"><label class="sr-only" for="region">按原描述地區篩選</label><select id="region"><option value="">所有街區</option></select><button id="clear" class="text-btn" hidden>清除 ×</button></div><div class="live-count"><strong id="count">228</strong><span>位文字居民<br><small id="count-sub">正於此處相遇</small></span></div><div class="intro-foot">讓文字有住址，也有再次相遇的可能。<span>001–228 / MACAO ARCHIVE</span></div></section>
+<section id="catalog" class="catalog" hidden aria-label="完整檔案索引"><div class="catalog-head"><span>字民戶籍簿 <b id="catalog-count">228</b></span><label>排序 <select id="sort"><option value="number">檔案編號</option><option value="title">標題</option><option value="date">建立時間（新→舊）</option></select></label></div><div id="records" class="records"></div><p id="empty" hidden>這一條街暫時沒有找到文字。試試「草堆街」「咖啡」或「推」。</p></section>
+<section id="design-tools" class="design-tools" hidden aria-label="再設計工具"><div class="eyebrow">把檔案變成一次新的觀看</div><div class="layout-options"><button class="active" data-layout="glyph">字形</button><button data-layout="ring">星環</button><button data-layout="street">街巷</button></div><div class="design-caption"><strong id="design-title">053 / RUA DO MEIO</strong><span id="design-caption">保留原字形與底色，以粒子重組。</span></div><div class="design-actions"><button id="shuffle" class="pill">換一位字民 ↗</button><button id="export" class="pill solid">收藏這次構圖 ↓</button></div></section>
+<div id="orbit-note" class="orbit-note"><span class="cross">+</span><span>228 ARCHIVE RESIDENTS<br><b>撥動粒子，讓一筆記錄靠近你。</b></span></div>
+<button id="peek" class="peek" aria-label="打開目前選中的檔案"><img src="assets/images/053.jpg" alt="RUA DO MEIO 原檔案"><span><small>本次相遇 / 053</small><strong>RUA DO MEIO</strong><em>查看原圖與資料 ↗</em></span></button>
+<aside id="detail" class="detail" hidden aria-label="檔案詳情"><button id="detail-close" class="close" aria-label="關閉檔案詳情">×</button><div id="detail-content"></div></aside>
+</main>
+<footer><div class="interaction-hint" id="hint"><span class="mouse-icon">↖</span> 移動撥散 · 按住聚攏 · 點選檔案</div><div class="controls"><button id="reset" title="恢復視角">↺ <span>重置</span></button><button id="motion" aria-pressed="false">Ⅱ <span>暫停</span></button><span class="control-divider"></span><button id="camera" class="camera"><span class="camera-icon">◉</span> <span>開啟手勢</span></button><button id="help-open" class="help-button" aria-label="操作說明">?</button></div><div class="archive-note">228 RECORDS <i></i> SNAPSHOT 2026.10.20</div></footer>
+<div id="hand-panel" class="hand-panel" hidden><video id="webcam" autoplay playsinline muted></video><canvas id="hand-overlay"></canvas><span id="hand-state">等待手掌進入畫面</span><button id="camera-stop" aria-label="關閉攝像頭">×</button></div>
+<div id="cursor" class="hand-cursor" hidden><span></span></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<dialog id="about"><button class="close" data-close="about" aria-label="關閉">×</button><div class="eyebrow">澳門檔案 / 字民</div><h2>每一個字，<br>都曾在街上生活。</h2><p>「字」是對象，「民」是街頭日常與市民性。招牌、便條、街牌、告示，構成不同語言、筆跡與材質共存的城市。</p><p>這件作品把同一組檔案分成兩種讀法：<b>INDEX</b> 讓記錄可以被查找，<b>ReDesign</b> 讓原字形在粒子中再次相遇。粒子不是額外的裝飾，而是從觀看進入一筆具體記錄的路徑。</p><div class="about-stats"><span><b>228</b>原始記錄</span><span><b>28</b>原描述空白</span><span><b>3</b>觀看方式</span></div><p class="small">資料快照為 2026-10-20，不自動更新。地區由原描述中的地名匹配，並非經緯度定位；原檔案含未核實 OCR，網站不以它替代正式轉錄。部分提取圖與照片為左右配對、部分為上下配對；ReDesign 依圖像方向擷取字形區，裁切仍可於後續打樣校正。</p><p class="small">攝像頭只在你點擊並授權後開啟，手部辨識在瀏覽器本機處理。本網站不錄影、不上傳攝像頭畫面；關閉手勢即停止影像串流。原照片、字形提取與標題歸原收集者。</p><div class="about-links"><a href="https://www.are.na/chen-wenqi/group5-1vk3ydy1fq4" target="_blank" rel="noopener">瀏覽共同檔案 ↗</a><a href="字民登記所.pdf" download>下載平面方案 ↓</a><a href="字民交互方案.pdf" download>下載交互提交版 ↓</a><a href="assets/THIRD_PARTY.txt" target="_blank" rel="noopener">技術與素材來源 ↗</a></div></dialog>
+<dialog id="help"><button class="close" data-close="help" aria-label="關閉">×</button><div class="eyebrow">INTERACTION GUIDE</div><h2>用手，把文字喚近。</h2><div class="guide-grid"><article><b>01 / 鼠標與觸屏</b><p>移動指標撥散粒子；按住聚攏，拖曳旋轉。滾輪或雙指縮放。點選編號節點查看原檔案。</p></article><article><b>02 / 攝像頭手勢</b><p>手掌移動帶動粒子；張掌撥散、握拳聚攏。拇指與食指捏合選取；雙手拉開／靠近縮放。先將手停在目標旁，再捏合。</p></article><article><b>03 / INDEX 檢索</b><p>輸入文字、街名、帳號或 ID，篩選結果會同步留在粒子星環。也可切到 INDEX，以圖片和原始描述逐一查閱。</p></article><article><b>04 / ReDesign 創作</b><p>在詳情選「字形粒子化」，或從 ReDesign 換一位字民。切換字形、星環、街巷；可下載當前畫面 PNG。</p></article></div><p class="small">鍵盤：/ 搜尋，1 浮游，2 INDEX，3 ReDesign，空白鍵暫停，Esc 關閉視窗。若攝像頭被拒絕或裝置不支援，可完整使用鼠標／觸屏瀏覽。手勢辨識受光線與遮擋影響。</p><button class="pill solid" data-close="help">開始探索 ↗</button></dialog>
+<noscript>此互動作品需要 JavaScript。你仍可<a href="字民登記所.pdf">下載平面索引 PDF</a>。</noscript>
+<script type="module" src="app.js"></script>
+</body></html>
+
+
